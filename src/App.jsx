@@ -1,4 +1,5 @@
 import { useState } from "react"; 
+import CardCarousel from "./Cards";
 export default function MyApp() {
   return (
     <>
@@ -48,9 +49,9 @@ export default function MyApp() {
       </nav>
 
       <main className="">
-        <div className="pt-15 pl-50 bg-green-100">
-        <div className="text-5xl font-extrabold">Share what you have,<br></br><div className="text-green-700 mt-3">nourish their lives.</div></div>
-        <div className="max-w-100 pt-2 pb-3">
+       <div className="pt-15 pl-50 pr-10 bg-green-100 flex items-center justify-between gap-10">
+       <div className="flex-1">        <div className="text-5xl font-extrabold">Share what you have,<br></br><div className="text-green-700 mt-3">nourish their lives.</div></div>
+       <div className="max-w-100 pt-2 pb-3">
             <p>Donate For All connects donors with those in need.
             Together, we can reduce waste and end hunger in our community.</p>
         </div>
@@ -61,6 +62,10 @@ export default function MyApp() {
         <div className="">
             <img></img> <p>Join <div className="text-green-800">thounds</div></p>
         </div>
+        </div>
+         <div className="frame relative w-full max-w-[520px] h-[420px] md:h-[500px] shrink-0">
+        <CardCarousel />
+         </div>
         </div>
       </main>
     </>
