@@ -72,7 +72,7 @@ export default function MyApp() {
 </nav>
 
       <main className="">
-        <div className="pt-8 px-4 md:pt-15 md:pl-20 lg:pl-50 bg-green-100 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-1/2">
+        <div className="pt-8 px-4 md:pt-15 md:pl-20 lg:pl-50 bg-green-100 grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-1/2">
           <div className="">
         <div className="text-3xl md:text-5xl font-extrabold">Share what you have,<br></br><div className="text-green-700 mt-3">nourish their lives.</div></div>
         <div className="max-w-full md:max-w-100 pt-2 pb-3">
@@ -80,19 +80,18 @@ export default function MyApp() {
             Together, we can reduce waste and end hunger in our community.</p>
         </div>
         <div className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-6 md:gap-10">
-            <button className="cursor-pointer bg-green-600 hover:bg-green-800 hover:scale-110 transition duration-300 text-white rounded-md font-bold h-12 w-40 flex items-center gap-1 px-4 py-2"><HiMiniGift className="text-4xl"></HiMiniGift><div  className="text-base">I want to donate</div></button>
-            <button className="cursor-pointer  rounded-md font-bold h-12 border-2 border-green-800 hover:bg-green-800 hover:scale-110 hover:text-white transition duration-300 w-40 flex items-center gap-1 px-4 py-2"><HiMiniUsers className="text-4xl"></HiMiniUsers>We are a charity</button>
+            <button className="cursor-pointer bg-green-600 hover:bg-green-800 hover:scale-110 transition duration-300 text-white rounded-md font-bold h-12 w-40 flex items-center gap-1 px-4 py-2 xs:w-full lg:w-40 xs:justify-center"><HiMiniGift className="text-4xl"></HiMiniGift><div  className="text-base">I want to donate</div></button>
+            <button className="cursor-pointer  rounded-md font-bold h-12 border-2 border-green-800 hover:bg-green-800 hover:scale-110 hover:text-white transition duration-300 w-40 flex items-center gap-1 px-4 py-2 xs:w-full lg:w-40 xs:justify-center"><HiMiniUsers className="text-4xl"></HiMiniUsers>We are a charity</button>
         </div>
-        <div className="max-w-full md:max-w-sm mt-10">
+        <div className="max-w-full xs:h-0 md:max-w-sm mt-10">
         <p className="tracking-wider">Join <span className="text-green-800">thousands</span> of donors and charities making a real difference.</p>
         </div>
         </div>
-        
-       <div className="frame relative w-full max-w-[520px] shrink-0 mt-32 sm:mt-24 md:mt-0">
+       <div className="frame relative w-full max-w-130 shrink-0 mt-32 sm:mt-24 md:mt-0">
           <div className="flex flex-col items-center gap-4 sm:gap-6 md:gap-10">
     <div className="font-extrabold text-xl md:text-3xl text-center px-4">Some of the Sites' active donations</div>
-    <div className="relative w-full h-[260px] sm:h-[300px] md:h-[400px]">
-    <CardCarousel/>
+    <div className="relative w-full h-65 sm:h-75 md:h-100">
+    <CardCarousel className=""/>
     </div>
   <div className="px-4 md:pl-20 mx-auto text-sm md:text-base text-center tracking-wider text-gray-800">From daily essentials to education and emergency <br></br>relif, see how your genrosity is creating real <br></br> change everyday.</div>
 </div>

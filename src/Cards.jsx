@@ -34,8 +34,17 @@ const CARDS = [
   },
 ];
 
-const SLOTS = [
-  { x: 0, y: 0, scale: 1, rot: 0, z: 50 }, 
+const MOBILE_SLOTS = [
+  { x: 0, y: 0, scale: 0.75, rot: 0, z: 50 },
+  { x: -90, y: -35, scale: 0.4, rot: -10, z: 20 },
+  { x: -70, y: 65, scale: 0.44, rot: -6, z: 25 },
+  { x: 70, y: 65, scale: 0.44, rot: 6, z: 25 },
+  { x: 90, y: -35, scale: 0.4, rot: 10, z: 20 },
+  { x: 0, y: -75, scale: 0.35, rot: 0, z: 10 },
+];
+
+const DESKTOP_SLOTS = [
+  { x: 0, y: 0, scale: 1, rot: 0, z: 50 },
   { x: -170, y: -45, scale: 0.5, rot: -10, z: 20 },
   { x: -130, y: 90, scale: 0.56, rot: -6, z: 25 },
   { x: 130, y: 90, scale: 0.56, rot: 6, z: 25 },
@@ -46,10 +55,21 @@ const SLOTS = [
 const ROTATE_MS = 2800; 
 const TRANSITION_MS = 1500; 
 
-export default function CardCarousel() {
+export default function CardCarousel({ className = "" }) {
+  const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768);
   const [offset, setOffset] = useState(0);
   const timerRef = useRef(null);
+  useEffect(() => {
+  const handleResize = () => {
+    setIsMobile(window.innerWidth < 768);
+  };
 
+  window.addEventListener("resize", handleResize);
+
+  return () => window.removeEventListener("resize", handleResize);
+}, []);
+
+const slots = isMobile ? MOBILE_SLOTS : DESKTOP_SLOTS;
   useEffect(() => {
     timerRef.current = setInterval(() => {
       setOffset((prev) => (prev + 1) % CARDS.length);
@@ -58,7 +78,7 @@ export default function CardCarousel() {
   }, []);
 
   return (
-    <div className="relative w-full h-full">
+    <div className={`relative w-full h-full ${className}`}>
       <style>{`
         @keyframes centerFloat {
           0%   { transform: translateY(0px) rotate(0deg); }
@@ -72,7 +92,7 @@ export default function CardCarousel() {
 
       {CARDS.map((card, i) => {
         const slotIndex = (i + offset) % CARDS.length;
-        const slot = SLOTS[slotIndex];
+        const slot = slots[slotIndex];
         const isCenter = slotIndex === 0;
 
         return (
