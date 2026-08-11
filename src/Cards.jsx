@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useRef } from "react";
 
 const CARDS = [
@@ -42,8 +43,8 @@ const SLOTS = [
   { x: 0, y: -110, scale: 0.44, rot: 0, z: 10 },
 ];
 
-const ROTATE_MS = 2000; 
-const TRANSITION_MS = 2000; 
+const ROTATE_MS = 2800; 
+const TRANSITION_MS = 1500; 
 
 export default function CardCarousel() {
   const [offset, setOffset] = useState(0);
