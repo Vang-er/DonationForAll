@@ -83,8 +83,8 @@ export default function Home() {
             Together, we can reduce waste and end hunger in our community.</p>
         </div>
         <div className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-6 md:gap-10">
-            <button className="cursor-pointer bg-green-600 hover:bg-green-800 hover:scale-110 transition duration-300 text-white rounded-md font-bold h-12 w-40 flex items-center gap-1 px-4 py-2 "><HiMiniGift className="text-4xl"></HiMiniGift><div  className="text-base">I want to donate</div></button>
-            <button className="cursor-pointer  rounded-md font-bold h-12 border-2 border-green-800 hover:bg-green-800 hover:scale-110 hover:text-white transition duration-300 w-40 flex items-center gap-1 px-4 py-2"><HiMiniUsers className="text-4xl"></HiMiniUsers>We are a charity</button>
+            <button className="cursor-pointer bg-green-600 hover:bg-green-800 hover:scale-110 transition duration-300 text-white rounded-md font-bold h-12 w-40 flex items-center gap-1 px-4 py-2 xs:w-full lg:w-40 xs:justify-center"><HiMiniGift className="text-4xl"></HiMiniGift><div  className="text-base">I want to donate</div></button>
+            <button className="cursor-pointer  rounded-md font-bold h-12 border-2 border-green-800 hover:bg-green-800 hover:scale-110 hover:text-white transition duration-300 w-40 flex items-center gap-1 px-4 py-2 xs:w-full lg:w-40 xs:justify-center"><HiMiniUsers className="text-4xl"></HiMiniUsers>We are a charity</button>
         </div>
         <div className="max-w-full md:max-w-sm mt-10">
         <p className="tracking-wider">Join <span className="text-green-800">thousands</span> of donors and charities making a real difference.</p>
@@ -118,7 +118,7 @@ export default function Home() {
        <div className="flex items-center max-w-4xl mx-auto gap-3 md:gap-6 px-4">
   <div className="flex-1 h-0.5 bg-green-600"></div>
 
-  <h2 className="text-xl sm:text-2xl md:text-5xl font-bold whitespace-nowrap">
+  <h2 className="text-xl xs:text-2xl sm:text-2xl md:text-5xl font-bold whitespace-nowrap">
     How <span className="text-green-600">Donate For All</span> works
   </h2>
 
@@ -126,6 +126,9 @@ export default function Home() {
 </div>
 
 <button className="cursor-pointer hover:translate-y-5 transition duration-300 infinite"><div className="relative w-8 h-4 "><div className="absolute w-10 h-0.5 bg-green-600 rotate-65"></div><div className="absolute w-10 h-0.5 bg-green-600 rotate-295 ml-4"></div></div></button></div>
+        <div className="grid grid-rows-3">
+<div className="text-green-950 bg-green-500 ">HOW IT WORKS</div>
+</div>
      </main>
     </>
   );
