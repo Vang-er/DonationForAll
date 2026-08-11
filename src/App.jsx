@@ -80,7 +80,7 @@ export default function MyApp() {
             Together, we can reduce waste and end hunger in our community.</p>
         </div>
         <div className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-6 md:gap-10">
-            <button className="cursor-pointer bg-green-600 hover:bg-green-800 hover:scale-110 transition duration-300 text-white rounded-md font-bold h-12 w-40 flex items-center gap-1 px-4 py-2 "><HiMiniGift className="text-4xl"></HiMiniGift><div  className="text-base">I want to donate</div></button>
+            <button className="cursor-pointer bg-green-600 hover:bg-green-800 hover:scale-110 transition duration-300 text-white rounded-md font-bold h-12 w-40 flex items-center gap-1 px-4 py-2"><HiMiniGift className="text-4xl"></HiMiniGift><div  className="text-base">I want to donate</div></button>
             <button className="cursor-pointer  rounded-md font-bold h-12 border-2 border-green-800 hover:bg-green-800 hover:scale-110 hover:text-white transition duration-300 w-40 flex items-center gap-1 px-4 py-2"><HiMiniUsers className="text-4xl"></HiMiniUsers>We are a charity</button>
         </div>
         <div className="max-w-full md:max-w-sm mt-10">
