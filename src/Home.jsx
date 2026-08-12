@@ -118,14 +118,16 @@ export default function Home() {
        <div className="flex items-center max-w-4xl mx-auto gap-3 md:gap-6 px-4">
   <div className="flex-1 h-0.5 bg-green-600"></div>
 
-  <h2 className="text-xl sm:text-2xl md:text-5xl font-bold whitespace-nowrap">
-    How <span className="text-green-600">Donate For All</span> works
+   <h2 className="text-xl xs:text-2xl sm:text-2xl md:text-5xl font-bold whitespace-nowrap">    How <span className="text-green-600">Donate For All</span> works
   </h2>
 
   <div className="flex-1 h-0.5 bg-green-600"></div>
 </div>
 
 <button className="cursor-pointer hover:translate-y-5 transition duration-300 infinite"><div className="relative w-8 h-4 "><div className="absolute w-10 h-0.5 bg-green-600 rotate-65"></div><div className="absolute w-10 h-0.5 bg-green-600 rotate-295 ml-4"></div></div></button></div>
+<div className="grid grid-rows-3">
+  <div className="text-green-950 bg-green-500 ">HOW IT WORKS</div>
+</div>
      </main>
     </>
   );
