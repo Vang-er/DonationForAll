@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { Mail, Lock, Eye, EyeOff, Heart, Building2, Users } from "lucide-react";
+import { useSettings } from "./SettingsContext";
 
 const SignIn = ({ onNavigateToSignUp }) => {
   const [showPassword, setShowPassword] = useState(false);
+  const { setIsLoggedIn } = useSettings();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -13,9 +15,11 @@ const SignIn = ({ onNavigateToSignUp }) => {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Sign In Data:", formData);
-  };
+  e.preventDefault();
+  console.log("Sign In Data:", formData);
+  setIsLoggedIn(true);
+  window.location.href = "/";
+};
 
   return (
     <div className="min-h-screen bg-[#f8faf7] flex items-center justify-center p-4 sm:p-8 font-sans relative overflow-hidden">

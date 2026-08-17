@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Mail, Lock, Eye, EyeOff, Heart, Building2, Users, User, Globe, Phone, CheckCircle2 } from 'lucide-react';
-
+import { useSettings } from "./SettingsContext";
 const SignUp = ({ onNavigateToSignIn }) => {
   const [accountType, setAccountType] = useState('person'); // 'person' or 'charity'
   const [showPassword, setShowPassword] = useState(false);
+  const { setIsLoggedIn } = useSettings();
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   const [formData, setFormData] = useState({
@@ -25,9 +26,11 @@ const SignUp = ({ onNavigateToSignIn }) => {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Sign Up Data:', { accountType, ...formData });
-  };
+  e.preventDefault();
+  console.log('Sign Up Data:', { accountType, ...formData });
+  setIsLoggedIn(true);
+  window.location.href = "/";
+};
 
   return (
     <div className="min-h-screen bg-[#f8faf7] flex items-center justify-center p-4 sm:p-8 font-sans">
@@ -100,7 +103,7 @@ const SignUp = ({ onNavigateToSignIn }) => {
                   onClick={() => setAccountType('person')}
                   className={`relative p-4 rounded-xl border text-center cursor-pointer transition ${
                     accountType === 'person'
-                      ? 'border-emerald-600 bg-emerald-50/30'
+                      ? 'border-emerald-600 bg-emerald-50/30 scale-110'
                       : 'border-gray-200 hover:border-gray-300'
                   }`}
                 >
@@ -120,7 +123,7 @@ const SignUp = ({ onNavigateToSignIn }) => {
                   onClick={() => setAccountType('charity')}
                   className={`relative p-4 rounded-xl border text-center cursor-pointer transition ${
                     accountType === 'charity'
-                      ? 'border-emerald-600 bg-emerald-50/30'
+                      ? 'border-emerald-600 bg-emerald-50/30 scale-110'
                       : 'border-gray-200 hover:border-gray-300'
                   }`}
                 >
@@ -143,7 +146,7 @@ const SignUp = ({ onNavigateToSignIn }) => {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
 
-              <div>
+              <div className=''>
                 <label className="block text-xs font-semibold text-gray-700 mb-1">Full Name</label>
                 <div className="relative">
                   <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
@@ -276,7 +279,7 @@ const SignUp = ({ onNavigateToSignIn }) => {
 
             <button
               type="submit"
-              className="w-full bg-emerald-800 hover:bg-emerald-900 text-white font-medium py-2.5 rounded-lg text-xs transition duration-200 shadow-sm mt-2"
+              className="w-full bg-emerald-800 hover:bg-emerald-900 text-white font-medium py-2.5 rounded-lg text-xs transition duration-200 shadow-sm mt-2 active:scale-90"
             >
               Sign Up
             </button>
